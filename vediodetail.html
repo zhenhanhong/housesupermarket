@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="js/vendor/assets/owl.carousel.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <!--<link rel="stylesheet" href="css/jquery-ui.css">-->
+    <link rel="stylesheet" href="js/vendor/owl-carousel/owl.carousel.css"/>
+    <link rel="stylesheet" href="js/vendor/owl-carousel/owl.theme.css"/>
+    <link rel="stylesheet" href="js/vendor/owl-carousel/owl.transitions.css"/>
+    <link rel="stylesheet" href="js/vendor/dialog/css/dialog.css"/>
+    <title></title>
+    <script src="js/vendor/jquery-3.1.0.min.js"></script>
+    <script src="js/vendor/owl-carousel/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="./js/player/cyberplayer.js"></script>
+    <script src="js/vendor/dialog/js/dialog.js"></script>
+    <style type="text/css">
+        .top-nav{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 44px;
+            background: #fff;
+            text-align: center;
+            display: table;
+            border-bottom: 1px solid #e5e5e5;
+        }
+        .top-nav h3{
+            display:table-cell;
+            vertical-align: middle;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .top-nav img{
+            position: absolute;
+            left: 10px;
+            top: 15px;
+        }
+        header{
+            width: 100%;
+            height: 80px;
+            background: #141414;
+            overflow: hidden;
+        }
+        header .head-warp{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        header .head-warp .left{
+            float:left;
+            width: 30%;
+            text-align: left;
+            margin-top: 15px;
+
+
+        }
+        header .head-warp .right{
+            float: right;
+            width: 5%;
+            /*background: red;*/
+            text-align: right;
+            margin-top: 25px;
+            cursor: pointer;
+
+        }
+        header .head-warp .right span{
+            display: inline-block;
+            margin-top: -25px;
+            clear: both;
+            vertical-align: middle;
+            color: #fff;
+        }
+        @media only screen and (max-width: 30em){
+            header{
+                display: none;
+            }
+        }
+
+
+        footer{
+            margin-top: 20px;
+            width: 100%;
+            height: 180px;
+            background: #141414;
+            color: #fff;
+            overflow: hidden;
+        }
+        .footer-warp{
+            margin-top: 50px;
+            width: 1200px;
+            height: 100%;
+            margin: 0 auto;
+            /*background: blue;*/
+
+        }
+        .footer-warp .left{
+            width:80% ;
+            height: 100%;
+            float: left;
+            /*background: red;*/
+            padding-top: 55px;
+
+
+        }
+        .footer-warp .left .c-left{
+            float: left;
+            width: 15%;
+        }
+        .footer-warp .left .c-right{
+            float: right;
+            width: 85%;
+        }
+        .footer-warp .left .c-right li{
+            display: inline;
+            padding: 0px 15px;
+            border-right: 2px solid #fff;
+        }
+        .footer-warp .left .c-right li:last-child{
+            border-right: 0;
+        }
+        .footer-warp .left .c-right a{
+
+            font-size: 1.2rem;
+            color: #fff;
+        }
+
+        .footer-warp .left .c-right span{
+            font-size: 1.2rem;
+        }
+        .footer-warp .left .c-right strong{
+            color: #e76b04;
+            font-size: 2rem;
+        }
+        .footer-warp .left .c-right .contact{
+            padding-left: 20px;
+            line-height: 38px;
+        }
+        .footer-warp .left p{
+            margin-top: 30px;
+            clear: both;
+            color: #bfbebe;
+            font-size: 1.2rem;
+        }
+        .footer-warp .right{
+            width: 20%;
+            float: right;
+            /*background: cyan;*/
+            padding-top: 40px;
+        }
+        .footer-warp .right li{
+            display: inline-block;
+            text-align: center;
+            margin-left: 20px;
+        }
+        .footer-warp .right li p{
+            color: #e0dcdc;
+            font-size: 1.2rem;
+            margin-top: 10px;
+
+        }
+        @media only screen and (max-width: 30em){
+            footer{
+                display: none;
+            }
+        }
+        html{
+            background: #f7f7f7;
+        }
+        .content{
+            margin-top: 20px;
+            width: 100%;
+            /*background: #f7f7f7;*/
+        }
+        .content .conent-warp{
+            width: 1160px;
+            margin: 0 auto;
+            padding: 20px 20px 30px 20px;
+            background: #fff;
+            overflow: hidden;
+        }
+        .conent-warp .left{
+            clear: both;
+            height: 520px;
+            width: 540px;
+            /*background: red;*/
+            float: left;
+        }
+        /*.conent-warp .left div{*/
+            /*width: 520px;*/
+            /*height: 540px;*/
+        /*}*/
+        .conent-warp .right{
+            /*margin-top: 20px;*/
+            display: inline-block;
+            width: calc(1160px - 520px - 20px);
+            height: 540px;
+            /*background: greenyellow;*/
+            float: right;
+        }
+        .conent-warp .right .hoster-info{
+            background:#f7f7f7;
+            width: calc(100% - 30px);
+            height: 120px;
+            overflow: hidden;
+            padding: 10px 15px;
+            /*padding: 20px 15px;*/
+            display: table;
+        }
+
+        .hoster-info-warp{
+            width: 100%;
+            background: #f7f7f7;
+            display: table-cell;
+            vertical-align: middle;
+            /*background: red;*/
+        }
+        .hoster-info-left{
+            float: left;
+            width: 90px;
+
+            /*height: 100%;*/
+
+        }
+        .hoster-info-left img{
+            margin-top: 3px;
+            vertical-align: middle;
+            border-radius: 45px;
+        }
+         .hoster-info-right{
+            float: right;
+            width: calc(100% - 115px);
+             /*margin-top: -15px;*/
+        }
+         .hoster-info-right h4{
+            color: #333;
+            font-size: 1.9rem;
+            /*background: red;*/
+        }
+         .hoster-info-right p{
+            margin-top: -20px;
+            color: #808080;
+            font-size: 1.6rem;
+        }
+        .conent-warp .right .hoster-info .facepic{
+            vertical-align: middle;
+        }
+        .conent-warp .right .hoster-comment{
+            background: #f7f7f7;
+            width: 100%;
+            height: 385px;
+            /*background: red;*/
+            margin-top: 15px;
+            overflow: hidden;
+
+        }
+        .conent-warp .right .hoster-comment #hoster-comment-list{
+            height: calc(100% - 60px);
+            width: 100%;
+            /*background: blue !important;*/
+            background: #f7f7f7;
+            z-index: 9999;
+            overflow: hidden;
+        }
+        .conent-warp .right .hoster-comment .comment-submit{
+            height: 60px;
+            width: 100%;
+            z-index: 10000;
+            /*background: blue;*/
+
+        }
+        .conent-warp .right .hoster-comment input{
+            vertical-align: middle;
+            border-radius: 20px;
+            width: 450px;
+            height: 36px;
+            margin-top: 10px;
+            margin-left: 15px;
+            border: 1px solid #e5e5e5;
+
+        }
+        .conent-warp .right .hoster-comment a{
+            display: inline-block;
+            border-radius: 20px;
+            background: #E76B0E;
+            color: #fff;
+            font-size: 1.6rem;
+            padding: 10px 35px;
+            margin-left: 40px;
+            margin-top: 10px;
+            vertical-align: middle;
+        }
+        #dialog-confirm{
+            display: none;
+        }
+
+        .hoster-comment ul li{
+            /*display: inline-block;*/
+            width: 100%;
+            height: auto;
+            /*background: cadetblue;*/
+            padding: 0px 15px;
+            /*background: #f7f7f7;!important;*/
+            overflow: hidden;
+        }
+        .hoster-comment ul li .hoster-comment-cell-left{
+            /*display: inline-block;*/
+            float: left;
+            width: 80px;
+        }
+        .hoster-comment ul li .hoster-comment-cell-left img{
+            margin-top: 15px;
+            border-radius: 30px;
+        }
+
+        .hoster-comment ul li .hoster-comment-cell-right{
+            /*padding: ;*/
+            padding: 10px 0;
+            float: right;
+            height: 100%;
+            width: calc(100% - 80px);
+            border-bottom: 1px solid #e6e6e6;
+        }
+        .hoster-comment-more{
+            width: 100%;
+            text-align: right;
+            /*background: red;*/
+        }
+        .hoster-comment-more #comment-more{
+            margin-top: 0px;!important;
+            background: #f7f7f7;!important;
+            padding: 5px 10px;
+        }
+        .hoster-comment-user{
+            position: relative;
+            width: 100%;
+        }
+        .hoster-comment ul li .hoster-comment-cell-right h4{
+            display: inline-block;
+            color: #333;
+            font-size: 1.4rem;
+        }
+        .hoster-comment ul li .hoster-comment-cell-right span{
+            /*display: inline-block;*/
+            color: #7b7c80;
+            font-size: 1.4rem;
+            position: absolute;
+            right: 30px;
+            top: 15px;
+
+        }
+        .hoster-comment ul li .hoster-comment-cell-right p{
+            margin-top: -10px;
+            color: #808080;
+            /*line-height: 1.5;*/
+            font-size: 1.4rem;
+            width: calc(100%  - 10px);
+            /*background: blue;*/
+            /*margin-top: 10px;*/
+        }
+        @media only screen and (max-width: 30em){
+            .banner{
+                display: none;
+            }
+        }
+        @media only screen and (min-width: 30em){
+            .top-nav{
+                display: none;
+            }
+            .comment-label{
+                display: none;
+            }
+            .hoster-comment-more{
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 30em){
+            .content{
+                margin-top: 44px;
+                width: 100%;
+            }
+            .content .conent-warp{
+                width: 100%;
+                padding: 0;
+                display: block;
+            }
+            .conent-warp .right{
+                /*display: block;*/
+                width: 100%;
+                height: auto;
+                background: yellow;
+                /*float: right;*/
+            }
+            .conent-warp .left{
+                height: 300px;
+                /*background: red;*/
+                float: left;
+            }
+            .conent-warp .right .hoster-info{
+                /*background:red;*/
+                width: 100%;
+                height: auto;
+                padding: 0;
+                /*background: yellow;*/
+            }
+            .hoster-info-left{
+                width: 60px;
+                height: 60px;
+                margin-top: 5px;
+                margin-left: 15px;
+            }
+            .hoster-info-right{
+                width:calc(100% - 90px);
+            }
+             .hoster-info-right p{
+                /*margin-top: -2rem;*/
+                line-height: 1.8;
+            }
+            .conent-warp .right .hoster-comment{
+                background: #f7f7f7;
+                width: 100%;
+                height: auto;
+                margin-top: 0px;
+                /*overflow: hidden;*/
+
+            }
+            .hoster-comment ul li{
+                display: block;
+                width: 100%;
+                height: auto;
+                background: #f7f7f7;
+            }
+            .hoster-comment ul li .hoster-comment-cell-left{
+                /*display: inline-block;*/
+                float: left;
+                width: 50px;
+            }
+            .hoster-comment-cell-left img{
+                margin-top: 15px;
+                width: 40px;
+                height: 40px;
+            }
+            .hoster-comment ul li .hoster-comment-cell-right{
+                margin-top: -10px;
+               width: calc(100% - 50px);
+            }
+            .hoster-comment ul li .hoster-comment-cell-right span{
+                /*display: inline-block;*/
+                color: #7b7c80;
+                font-size: 1.4rem;
+                position: absolute;
+                right: 30px;
+                top: 15px;
+
+            }
+            .comment-submit{
+                display: none;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div class="top-nav">
+    <h3 id="top-nav-title">标题</h3>
+    <img  id="feedback" src="./res/back.png" width="15px" height="15px" style="cursor:pointer;" alt="#"/>
+</div>
+    <header>
+        <div class="head-warp">
+            <div class="left">
+                <img src="./res/LOGO.png" alt=""/>
+            </div>
+            <div class="right" id="downloadAPP">
+                <img src="./res/icon_app.png" alt=""/>
+                <span>下载</span>
+            </div>
+        </div>
+    </header>
+    <div class="banner">
+        <div id="owl-demo" class="owl-carousel owl-theme">
+            <div class="item"><img src="./res/banner1.png"  alt=""/></div>
+            <div class="item"><img src="./res/banner2.png"  alt=""/></div>
+            <div class="item"><img src="./res/banner1.png"  alt=""/></div>
+            <div class="item"><img src="./res/banner2.png"  alt=""/></div>
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div class="conent-warp" id="conent-warp">
+            <!--<div id="temp1"></div>-->
+            <!--<div id="temp2"></div>-->
+
+            <div class="left" id="hoster-label-l">
+                <div id="baiduplayer" class="baiduplayer" width=" 520px" height = "540px"></div>
+            </div>
+            <div class="right" >
+                <div class="hoster-info" id="hoster-info">
+                    <div class="hoster-info-warp" id="hoster-label-r">
+                        <div class="hoster-info-left">
+                            <img class="facepic" id="facepic" src="" width="100%" height="100%" alt=""/>
+
+                        </div>
+                        <div class="hoster-info-right">
+                            <h4>标题标题标题标题</h4>
+                            <p>主播:宇宙无敌的啊啊啊啊</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hoster-comment">
+                    <div class="comment-label" id="comment-label" style="border-bottom: 1px solid #e5e5e5;border-top: 1px solid #e5e5e5; background: #f7f7f7">
+                        <!--<h4 style="font-size: 1.8rem;line-height: 0.5rem; >评论</h4>-->
+                        <h4 style="font-size: 1.8rem;line-height:2px; padding-left:15px;color:#333; background: #f7f7f7">评论</h4>
+                    </div>
+                    <ul id="hoster-comment-list" >
+                        <!--<li>-->
+                            <!--<div class="hoster-comment-cell-left">-->
+                                <!--<img src="./res/pic_主播头像.png" width="60px" height="60px" alt=""/>-->
+                            <!--</div>-->
+                            <!--<div class="hoster-comment-cell-right">-->
+
+                                <!--<div class="hoster-comment-user">-->
+                                    <!--<h4>我有啊啊啊:</h4>-->
+                                    <!--<span>9-27 13:00</span>-->
+                                <!--</div>-->
+                                <!--<p>的发蒂芬骄傲</p>-->
+                            <!--</div>-->
+
+                        <!--</li>-->
+                    </ul>
+                    <div class="hoster-comment-more">
+                        <a id="comment-more" href="#" style="color:#047cba">查看更多></a>
+                    </div>
+                    <div class="comment-submit">
+                        <input type="text"/>
+                        <a href="javascript:" id="submitComment">发送</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <div class="footer-warp">
+        <div class="left">
+            <div class="c-left">
+                <img src="./res/LOGO.png"  alt=""/>
+            </div>
+            <div class="c-right">
+                <div>
+                    <ul>
+                        <li><a href="">关于我们</a></li>
+                        <li><a href="">人才招聘</a></li>
+                        <li><a href="">联系我们</a></li>
+                        <li><a href="">用户协议</a></li>
+                        <li><a href="">友情链接</a></li>
+                        <li><a href="">网站地图</a></li>
+                    </ul>
+                </div>
+                <div class="contact">
+                    <span>客服热线</span>
+                    <strong>400-800-8820</strong>
+                    <span>(工作时间:9:00 - 21:00)</span>
+                </div>
+            </div>
+            <p>
+                版权所有 &copy 深圳市屋超科技有限公司 copyright &copy️2016 apyfc.com All Rights Reserved 备案号:粤ICP 备 14043389 号 -1
+            </p>
+        </div>
+        <div class="right">
+            <ul>
+                <li>
+                    <div>
+                        <img src="./res/pic_有房超微信号.png" alt=""/>
+                        <p>关注优房超微信号</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <img src="./res/pic_有房超APP.png" alt=""/>
+                        <p>下载优房超APP</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </footer>
+    <div id="dialog-confirm">
+        <span>您好,只有在优房超APP中才能查看</span>
+    </div>
+    <script src="./lib/zepto.min.js"></script>
+    <script>
+        window.jQuery = $;
+    </script>
+    <script src="./js/jquery.jsonp.js"></script>
+    <script src="./js/jquery.jsonp.js"></script>
+    <!--<script src="./js/jquery-ui.min.js"></script>-->
+    <script>
+        (function(){
+            'use strict';
+            var screenwidth;
+            var timer = null;
+            var mwidth = 520;
+            var mheight = 540;
+            $(window).resize(function(){
+                mheight = $(window).height();
+                mwidth = $(window).width();
+                if(mwidth >= 465){
+                    player(520,540);
+                }else{
+                    player(mwidth,300);
+                }
+            })
+
+
+
+                //工具闭包
+            var Util = (function(){
+                //todo 时间戳转为日期
+                function datehandel(timestamp){
+                    var newDate = new Date();
+                    newDate.setTime(timestamp);
+                    var iso = newDate.toISOString();
+                    var month = iso.substring(6,7);
+                    var day = iso.substr(8,2);
+                    var time = iso.substr(11,5);
+
+                    return month + '-' + day + ' ' + time;
+                }
+                //todo 获取url参数
+                function getUrlParm(sParm){
+                    var sPageURL = decodeURI(window.location.search.substring(1));
+                    var sURLvariables = sPageURL.split('&');
+                    for(var i = 0; i < sURLvariables.length;i++){
+                        var sParmName = sURLvariables[i].split('=');
+                        if(sParmName[0] == sParm){
+                            return sParmName[1];
+                        }
+                    }
+                    return null;
+                }
+                return {
+                    getUrlParm : getUrlParm,
+                    datehandel:datehandel
+                }
+            })();
+            function getCurrentScreenWidth(){
+                screenwidth = $(window).width();
+            }
+            var main = function(){
+                var onlineAudienceNum = Util.getUrlParm('onlineAudienceNum');
+                function divreplace(screewidth){
+                    //TODO 替换两个元素之间的位置
+                    var temp1 = $('#temp1');
+                    var temp2 = $('#temp2');
+                    var nodel = $('#hoster-label-l');
+                    var noder = $('#hoster-label-r');
+                    console.log($(window).width());
+                    if($(window).width() <= screewidth){
+                        $(noder).insertBefore(temp1);
+                        $(nodel).insertBefore(temp2);
+                        $(temp1).insertAfter(noder);
+                        $(temp2).insertAfter(nodel);
+                    }else{
+                        $(nodel).insertBefore(temp1);
+                        $(noder).insertBefore(temp2);
+                        $(temp1).insertAfter(nodel);
+                        $(temp2).insertAfter(noder);
+
+                    }
+                }
+                //下载app
+                $('#downloadAPP').click(function(){
+                   dialog();
+                });
+                //查看更多评论
+                $('#comment-more').click(function(){
+                   dialog();
+                });
+                //提交评论
+                $('#submitComment').click(function(){
+                    dialog();
+                });
+                //dialog
+                function dialog(){
+                    $.dialog({
+                        type : 'confirm',
+                        onClickOk : function(){
+//                            alert('你点了确定~~');
+                        },
+                        onClickCancel : function(){
+//                            alert('你点了取消~~');
+                        },
+                        contentHtml : '<p>您好,只有在优房超APP中才能查看</p>'
+                    });
+                }
+
+                //设置navititle
+                $('#top-nav-title').text(Util.getUrlParm('topic'));
+                //返回上一页
+                $('#feedback').click(function(){
+                    history.go(-1);
+                });
+                if($(window).width() <= 460){
+                    player($(window).width(),300);
+                }else{
+                    player(520,540);
+                }
+                //轮播图
+                $("#owl-demo").owlCarousel({
+                    slideSpeed : 100,
+                    paginationSpeed : 300,
+                    singleItem:true,
+                    autoPlay:true
+                });
+                //主播信息
+                hosterInfo();
+                //获取主播头像
+                getUserface();
+                //评论列表
+                listLive();
+
+
+
+            }
+           return main();
+            function listLive(){
+                var targetID = Util.getUrlParm('id');
+//                alert(targetID);
+                $.ajax({
+                    async:true,
+                    url :'https://open.dev.mtcentcloud.com/listComment',
+                    type :"GET",
+                    dataType : 'jsonp',
+                    jsonp:'callback',
+                    data:{
+                        target_id :targetID,
+                    },
+                    timeout : 5000,
+                    success : function(obj) {
+                        if (parseInt(obj.code) == 200) {
+                            var arr = obj.result;
+                            var liarr = [];
+                            for(var i =0;i < arr.length;i++){
+                                var ali = $("<li><div class='hoster-comment-cell-left'><img id='face-img' src='' alt='' width='60px' height='60px'/></div>" +
+                                        "<div class='hoster-comment-cell-right'><div class='hoster-comment-user'><h4>我有啊啊啊:</h4>" +
+                                        "<span></span></div><p>多大的</p></div></li>");
+                                liarr.push(ali);
+                            }
+                            var parlist = $('#hoster-comment-list');
+                            $.each(arr, function(index, i){
+                                if(index < 3) {
+                                    parlist.append(liarr[index]);
+                                    $(liarr[index]).find('#face-img').attr({
+                                        'src': i.userFaceUrl,
+                                    });
+                                    $(liarr[index]).find('h4').text(i.userName);
+                                    $(liarr[index]).find('span').text(Util.datehandel(i.createTime));
+                                    $(liarr[index]).find('p').text(i.content);
+                                }else{
+                                    return;
+                                }
+
+                            })
+                        }
+                    }
+                });
+
+            }
+            //// https://open.dev.mtcentcloud.com/getUserInfoByGuid?product_guid=689cc55f-087d-4d0c-9353-8ced505c4d86&user_guid=c06b8aad-0e10-4f1b-8b5e-7be2c00b3957
+            function getUserface(){
+                var par = $("#hoster-info");
+                var facepic = $(par).find("#facepic");
+//                alert();
+                $.ajax({
+                    async: true,
+                    url: 'https://open.dev.mtcentcloud.com/getUserInfoByGuid',
+                    type: "GET",
+                    dataType: 'jsonp',
+                    jsonp: 'callback',
+                    data: {
+                        product_guid: '689cc55f-087d-4d0c-9353-8ced505c4d86',
+                        user_guid:Util.getUrlParm('anchor'),
+
+                    },
+                    timeout: 5000,
+                    success: function (obj) {
+                            var dic = obj.results;
+                        var i = dic.user;
+//                        alert(i);
+                            facepic.attr({
+                                src:i.faceUrl
+                            });
+
+
+                    }
+                });
+            }
+            function hosterInfo(){
+
+
+                var topic = Util.getUrlParm('topic');
+                var desc = Util.getUrlParm('desc');
+                var anchorName = Util.getUrlParm('anchorName');
+                var par = $("#hoster-info");
+
+                var title = $(par).find('h4');
+                var hoster = $(par).find('p');
+
+                $(title).text(topic);
+                $(hoster).text(anchorName);
+            }
+
+            function player(cwidth,cheight){
+                getCurrentScreenWidth();
+
+                var fileurl = Util.getUrlParm('m3u8PlaybackUrl');
+                var player = cyberplayer("baiduplayer");
+                player.setup({
+                    stretching: "uniform",
+                    file: fileurl,
+                    autostart: true,
+                    repeat: false,
+                    volume: 100,
+                    controls: true,
+                    width:cwidth,
+                    height:cheight,
+                    ak: '4ba83274542149c392d843ccd69c0516' // 公有云平台注册即可获得accessKey
+                });
+            }
+            //查看更多
+
+        })();
+
+
+    </script>
+
+
+
+
+</body>
+</html>

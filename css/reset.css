@@ -1,0 +1,88 @@
+/************
+*页面样式
+************/
+/*============
+基本默认值
+=============*/
+html{
+    font-size:16px;
+}
+/*选中文字背景颜色*/
+::selection{
+    background-color: #b3d4fc;
+    text-shadow: none;
+}
+li{
+    list-style: none;
+}
+
+body{
+    background-color: #fff;
+}
+li{
+    text-decoration: none;
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+a:hover, a:active{
+    color: #bb1c20;
+    text-decoration: none;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption, tbody, tfoot, thead, th, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family:Arial,'Times New Roman','Microsoft YaHei'!important;
+    font: inherit;
+    color: #333333;
+}
+/*============
+    工具样式
+=============*/
+.center-block{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+.pull-right{
+    float: right !important;
+}
+.pull-left{
+    float: left !important;
+}
+.text-right{
+    text-align: right !important;
+}
+.text-left{
+    text-align: left !important;
+}
+.text-center{
+    text-align: center !important;
+}
+
+.invisible{
+    visibility: hidden;
+}
+.text-hide{
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+
+}
+.clear:before,
+.clear:after{
+    content: " ";
+    display: table;
+
+}
+.clearfix{
+    clear: both;
+}
+
